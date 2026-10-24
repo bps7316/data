@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portal Data Kependudukan — BPS Kabupaten Enrekang</title>
+<style>
+  html, body { margin:0; height:100%; background:#F5F3EE; }
+  iframe { position:fixed; inset:0; width:100%; height:100%; border:0; }
+  noscript { display:block; padding:24px; font:14px sans-serif; }
+</style>
+</head>
+<body>
+<iframe id="app" title="Portal Data Kependudukan" allow="clipboard-write" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<noscript>Halaman ini membutuhkan JavaScript. Silakan aktifkan JavaScript di browser Anda.</noscript>
+
+<script>
+// ====== ISI DI SINI ======
+var PORTAL_EXEC   = 'https://script.google.com/macros/s/AKfycbwbC2O7jOkbiy_oIinTeUqNFK0fEUrR_11Cx5v_KSuR2GC1GmJF8IVSKGS6eN35k80m/exec';
+// =========================
+
+var page = (new URLSearchParams(location.search).get('page') || 'home').replace(/[^a-z]/gi, '').toLowerCase();
+var src;
+var allowed = ['home', 'portal', 'tentang', 'laporkan', 'bukutamu', 'layanan'];
+if (allowed.indexOf(page) < 0) page = 'home';
+src = PORTAL_EXEC + '?page=' + page;
+document.getElementById('app').src = src;
+</script>
+</body>
+</html>
