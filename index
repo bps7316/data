@@ -26,5 +26,5 @@ if (allowed.indexOf(page) < 0) page = 'home';
 src = PORTAL_EXEC + '?page=' + page;
 document.getElementById('app').src = src;
 </script>
-</body>
+</body
 </html>
